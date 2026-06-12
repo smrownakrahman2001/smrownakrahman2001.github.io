@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S.M. Rownak Rahman — Education & Development Practitioner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --cream: #FAF7F0;
+    --cream-deep: #F2EDE2;
+    --ink: #2B2B26;
+    --ink-soft: #5A564E;
+    --clay: #B6562D;
+    --clay-deep: #964722;
+    --moss: #5C6B4F;
+    --sand: #E8E0D0;
+    --gold: #C9A24B;
+    --line: #D8CFBC;
+
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'Source Sans 3', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+
+    --max: 920px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--clay); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--clay);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ============ TEXTURE BACKGROUND ============ */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(182, 86, 45, 0.04), transparent 40%),
+      radial-gradient(circle at 85% 70%, rgba(92, 107, 79, 0.05), transparent 45%);
+    pointer-events: none;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 247, 240, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-name {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+  .nav-links a {
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+  }
+  .nav-links a:hover { color: var(--clay); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .nav-links { gap: 14px; }
+    .nav-links a:nth-child(4), .nav-links a:nth-child(5) { display: none; }
+  }
+
+  /* ============ HERO ============ */
+  header.hero {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 64px 24px 0;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--clay);
+    border-radius: 50%;
+  }
+
+  h1.title {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  h1.title em {
+    font-style: italic;
+    color: var(--clay);
+  }
+
+  .tagline {
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    color: var(--ink-soft);
+    max-width: 600px;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+  .tagline strong { color: var(--ink); font-weight: 600; }
+
+  .hero-cta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .btn {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 12px 24px;
+    border-radius: 2px;
+    border: 1.5px solid var(--ink);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+  }
+  .btn-solid {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .btn-solid:hover {
+    background: var(--clay);
+    border-color: var(--clay);
+    text-decoration: none;
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+  }
+  .btn-outline:hover {
+    background: var(--ink);
+    color: var(--cream);
+    text-decoration: none;
+  }
+
+  /* ============ LOGFRAME STRIP — signature element ============ */
+  .logframe {
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    margin: 0 -24px 0;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .logframe::-webkit-scrollbar { display: none; }
+
+  .logframe-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    font-family: var(--mono);
+  }
+  .logframe-table th {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+    text-align: left;
+    padding: 10px 24px 6px;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  .logframe-table td {
+    padding: 16px 24px 22px;
+    vertical-align: top;
+    border-right: 1px solid var(--line);
+  }
+  .logframe-table td:last-child { border-right: none; }
+
+  .lf-indicator {
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--clay);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .lf-label {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--ink);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .lf-detail {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 640px) {
+    .lf-indicator { font-size: 1.5rem; }
+    .logframe-table td, .logframe-table th { padding: 10px 16px 14px; }
+  }
+
+  /* ============ SECTIONS ============ */
+  section {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+  section.tight { padding-top: 56px; padding-bottom: 56px; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+  }
+  .section-tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--moss);
+    border: 1px solid var(--moss);
+    padding: 3px 9px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ============ ABOUT ============ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  @media (max-width: 720px) {
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .about-text p {
+    margin-bottom: 18px;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+  .about-text p strong { color: var(--ink); font-weight: 600; }
+  .about-text a { font-weight: 600; }
+
+  .field-card {
+    background: var(--cream-deep);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--clay);
+    padding: 24px;
+    border-radius: 2px;
+  }
+  .field-card h3 {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 14px;
+  }
+  .field-card ul { list-style: none; }
+  .field-card li {
+    font-size: 0.9rem;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .field-card li:last-child { border-bottom: none; }
+  .field-card li span:first-child { color: var(--ink); font-weight: 500; }
+  .field-card li span:last-child {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--moss);
+    white-space: nowrap;
+  }
+
+  /* ============ EXPERIENCE ============ */
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 28px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .exp-item:first-of-type { padding-top: 0; }
+  .exp-item:last-of-type { border-bottom: none; padding-bottom: 0; }
+
+  @media (max-width: 640px) {
+    .exp-item { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  .exp-period {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--moss);
+    padding-top: 4px;
+  }
+  .exp-period .exp-loc {
+    display: block;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    font-size: 0.74rem;
+  }
+
+  .exp-role {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .exp-org {
+    font-size: 0.92rem;
+    color: var(--clay);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .exp-body ul {
+    list-style: none;
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+  }
+  .exp-body li {
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .exp-body li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  /* ============ EVIDENCE / PROJECTS ============ */
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 720px) {
+    .evidence-grid { grid-template-columns: 1fr; }
+  }
+
+  .evidence-card {
+    background: var(--cream-deep);
+    border: 1px solid var(--line);
+    padding: 26px;
+    border-radius: 2px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .evidence-card:hover {
+    border-color: var(--clay);
+    transform: translateY(-2px);
+  }
+  .evidence-tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--moss);
+  }
+  .evidence-card h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .evidence-card p {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    flex-grow: 1;
+  }
+  .evidence-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--clay);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .evidence-link::after { content: "→"; transition: transform 0.2s ease; }
+  .evidence-card:hover .evidence-link::after { transform: translateX(4px); }
+
+  /* ============ CREDENTIALS ============ */
+  .cred-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .cred-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .cred-item:last-child { border-bottom: none; }
+  .cred-name {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 0.96rem;
+  }
+  .cred-issuer {
+    font-size: 0.84rem;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+  .cred-date {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--moss);
+    background: var(--sand);
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* ============ PUBLICATIONS ============ */
+  .pub-item {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-title {
+    font-family: var(--serif);
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+    font-style: italic;
+  }
+  .pub-note {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  /* ============ CONTACT ============ */
+  .contact-section {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 4px;
+    margin: 0 24px 80px;
+    max-width: calc(var(--max) - 0px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 40px;
+    text-align: center;
+  }
+  .contact-section .section-title { color: var(--cream); }
+  .contact-section .section-head { border-bottom: 1px solid rgba(250,247,240,0.15); justify-content: center; }
+  .contact-section .section-tag { border-color: var(--gold); color: var(--gold); }
+
+  .contact-lead {
+    max-width: 520px;
+    margin: 0 auto 32px;
+    color: var(--sand);
+    font-size: 1.02rem;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact-links a {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--cream);
+    border: 1px solid rgba(250,247,240,0.25);
+    padding: 10px 20px;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+  .contact-links a:hover {
+    border-color: var(--clay);
+    background: var(--clay);
+    text-decoration: none;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px 48px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    font-family: var(--mono);
+  }
+
+  /* ============ SCROLL REVEAL ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-name">S.M. Rownak Rahman</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Dhaka, Bangladesh — Open to relocation</div>
+    <h1 class="title">Designing programs<br>that <em>reach</em> and <em>hold</em>.</h1>
+    <p class="tagline">
+      I'm <strong>Rownak</strong> — an education and community development practitioner working at the
+      intersection of classroom practice, field research, and program accountability.
+      Currently a Teaching Fellow & Researcher with <strong>Teach For Bangladesh</strong>.
+    </p>
+    <div class="hero-cta">
+      <a href="#experience" class="btn btn-solid">View my work</a>
+      <a href="#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+  </header>
+
+  <!-- SIGNATURE LOGFRAME STRIP -->
+  <div class="logframe">
+    <table class="logframe-table">
+      <thead>
+        <tr>
+          <th>Indicator</th>
+          <th>Reach</th>
+          <th>Evidence Base</th>
+          <th>Credentials</th>
+          <th>Domains</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="lf-indicator">3+ yrs</span>
+            <span class="lf-label">Field experience</span>
+            <span class="lf-detail">Education, HR, research & community programs</span>
+          </td>
+          <td>
+            <span class="lf-indicator">40+</span>
+            <span class="lf-label">Learners supported</span>
+            <span class="lf-detail">Foundational literacy & numeracy, TFB classroom</span>
+          </td>
+          <td>
+            <span class="lf-indicator">2</span>
+            <span class="lf-label">Published papers</span>
+            <span class="lf-detail">Interfaith harmony & youth mental health research</span>
+          </td>
+          <td>
+            <span class="lf-indicator">3</span>
+            <span class="lf-label">MEAL & EiE certs</span>
+            <span class="lf-detail">DisasterReady, Kaya / CRS, Keeping Children Safe</span>
+          </td>
+          <td>
+            <span class="lf-indicator">M.Ed.</span>
+            <span class="lf-label">Educational Leadership</span>
+            <span class="lf-detail">BRAC University, 2025</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">01 — Profile</span>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a graduate of the <strong>University of Dhaka</strong> (B.A. Hons, World Religions and Culture)
+          and hold an <strong>M.Ed. in Educational Leadership and Administration</strong> from BRAC University.
+          My work sits at the overlap of three things I care about: classrooms that actually serve the children
+          in front of them, research that's grounded in lived community context, and program systems that are
+          honest about whether they're working.
+        </p>
+        <p>
+          As a <strong>Teaching Fellow with Teach For Bangladesh</strong>, I teach in an underserved primary
+          school context — and as a Researcher within the same fellowship, I designed and ran a
+          <strong>community financial literacy initiative</strong> from planning through delivery, including
+          stakeholder reporting and progress documentation.
+        </p>
+        <p>
+          Before this, I worked across HR, youth social entrepreneurship programs, and academic research —
+          experience that's given me a practical view of how organizations run, not just how programs are
+          designed on paper. I'm now building toward roles in <strong>program coordination, MEAL, and
+          education-focused development work</strong> with NGOs and INGOs.
+        </p>
+      </div>
+      <div class="field-card">
+        <h3>Quick Facts</h3>
+        <ul>
+          <li><span>Based in</span><span>Dhaka, BD</span></li>
+          <li><span>Languages</span><span>Bengali, English</span></li>
+          <li><span>Current role</span><span>TFB Fellow</span></li>
+          <li><span>Open to</span><span>Relocation</span></li>
+          <li><span>Focus areas</span><span>Education, MEAL</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">02 — Activities</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">
+        Jan 2025 — Present
+        <span class="exp-loc">Dhaka, Bangladesh</span>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Teaching Fellow & Researcher</div>
+        <div class="exp-org">Teach For Bangladesh</div>
+        <ul>
+          <li>Design and deliver student-centred lessons in an underserved primary school, improving foundational literacy, numeracy, and socio-emotional outcomes for 40+ learners</li>
+          <li>Use assessment data and classroom observation cycles to differentiate instruction for struggling learners</li>
+          <li>Conceptualised and led a community financial literacy initiative — end-to-end planning, content, stakeholder coordination, and delivery</li>
+          <li>Prepare implementation decks, billing documentation, and progress reports for programme leadership</li>
+          <li>Coordinate with school management, community leaders, and external stakeholders on child protection and inclusive education</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">
+        Jan — Apr 2026
+        <span class="exp-loc">Remote / International</span>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Fellow</div>
+        <div class="exp-org">Aspire Institute — Aspire Leaders Program</div>
+        <ul>
+          <li>Selected for a globally competitive leadership fellowship on civic leadership and development challenges</li>
+          <li>Collaborated with peers across emerging markets on applied solutions to systemic development issues</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">
+        Aug — Dec 2023
+        <span class="exp-loc">Uttara, Dhaka</span>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Human Resources Executive</div>
+        <div class="exp-org">YouthBees</div>
+        <ul>
+          <li>Managed recruitment cycles, onboarding, and employee engagement for a youth-led social enterprise</li>
+          <li>Maintained HR documentation and coordinated performance review processes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">
+        Mar — Dec 2023
+        <span class="exp-loc">Mirpur, Dhaka</span>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Management Trainee / Admin & HR Intern</div>
+        <div class="exp-org">Youth School for Social Entrepreneurs (YSSE)</div>
+        <ul>
+          <li>Supported coordination for youth-focused social entrepreneurship programs aligned with the SDGs</li>
+          <li>Worked with stakeholders, volunteers, and beneficiaries to ensure smooth program implementation</li>
+          <li>Progressed from Intern to Management Trainee within six months</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-period">
+        Jan 2021 — Feb 2024
+        <span class="exp-loc">Dhaka, Bangladesh</span>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Research Assistant</div>
+        <div class="exp-org">University of Dhaka — Dept. of World Religions & Culture</div>
+        <ul>
+          <li>Contributed to publications on interfaith harmony and Sufi approaches to youth mental health</li>
+          <li>Conducted literature reviews, primary data collection, and qualitative analysis for manuscripts</li>
+          <li>Organised departmental seminars and student-led research activities</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE / PORTFOLIO -->
+  <section id="evidence" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">03 — Outputs</span>
+      <h2 class="section-title">Evidence & Projects</h2>
+    </div>
+    <div class="evidence-grid">
+      <div class="evidence-card">
+        <span class="evidence-tag">Field Project</span>
+        <h3>Community Financial Literacy Initiative</h3>
+        <p>Designed and delivered a full-cycle financial literacy program for parents and community members — covering planning, stakeholder mobilisation, content development, and on-ground sessions, with structured progress reporting back to TFB leadership.</p>
+        <a href="#contact" class="evidence-link">Discuss this project</a>
+      </div>
+      <div class="evidence-card">
+        <span class="evidence-tag">Research</span>
+        <h3>Sufi & Mystic Approaches to Youth Mental Health</h3>
+        <p>A study on the context of Dhaka University, examining how Sufi and mystic traditions inform community-based responses to youth mental health — relevant to psychosocial support programming.</p>
+        <a href="#contact" class="evidence-link">Request the paper</a>
+      </div>
+      <div class="evidence-card">
+        <span class="evidence-tag">Research</span>
+        <h3>Beyond Religion: Akbar's Court & Interfaith Harmony</h3>
+        <p>An inquiry into Akbar's court as a centre for interfaith dialogue — exploring pluralism and conflict resolution through a historical lens with contemporary relevance.</p>
+        <a href="#contact" class="evidence-link">Request the paper</a>
+      </div>
+      <div class="evidence-card">
+        <span class="evidence-tag">In Progress</span>
+        <h3>MEAL Framework — TFB Case Study</h3>
+        <p>An applied MEAL framework (indicators, data collection plan, reporting cycle) built around the community financial literacy initiative — translating certification learning into a real program document.</p>
+        <a href="#contact" class="evidence-link">Coming soon</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section id="credentials" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">04 — Verification</span>
+      <h2 class="section-title">Credentials & Training</h2>
+    </div>
+    <div class="cred-list">
+      <div class="cred-item">
+        <div>
+          <div class="cred-name">M.Ed. — Educational Leadership and Administration</div>
+          <div class="cred-issuer">BRAC University</div>
+        </div>
+        <div class="cred-date">2025</div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-name">B.A. (Hons.) — World Religions and Culture</div>
+          <div class="cred-issuer">University of Dhaka</div>
+        </div>
+        <div class="cred-date">2020 – 2024</div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-name">MEAL DPro — Monitoring, Evaluation, Accountability & Learning</div>
+          <div class="cred-issuer">Catholic Relief Services / Humanitarian Leadership Academy / Humentum (Kaya)</div>
+        </div>
+        <div class="cred-date">Jun 2026</div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-name">MEAL Essentials Certificate</div>
+          <div class="cred-issuer">DisasterReady (Cornerstone OnDemand Foundation)</div>
+        </div>
+        <div class="cred-date">Jun 2026</div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-name">A Human Rights-Based Approach to Child Safeguarding in Peacekeeping Operations</div>
+          <div class="cred-issuer">Keeping Children Safe</div>
+        </div>
+        <div class="cred-date">Jun 2026</div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-name">Education in Emergencies — Global Course</div>
+          <div class="cred-issuer">INEE</div>
+        </div>
+        <div class="cred-date">—</div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-name">Specialised Module — Children and Climate Change</div>
+          <div class="cred-issuer">—</div>
+        </div>
+        <div class="cred-date">—</div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-name">Teacher Replay and Children React: Enhanced Learning Through Play</div>
+          <div class="cred-issuer">—</div>
+        </div>
+        <div class="cred-date">—</div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-name">Project Management — Professional Development</div>
+          <div class="cred-issuer">—</div>
+        </div>
+        <div class="cred-date">—</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONOURS / LEADERSHIP (compact) -->
+  <section class="tight reveal">
+    <div class="section-head">
+      <span class="section-tag">05 — Background</span>
+      <h2 class="section-title">Leadership & Honours</h2>
+    </div>
+    <div class="about-grid">
+      <div class="field-card" style="border-left-color: var(--moss);">
+        <h3>Leadership Roles</h3>
+        <ul>
+          <li><span>VP, World Religions Debating Club</span><span>2024–25</span></li>
+          <li><span>Edu. & Curriculum Sec., WRDC</span><span>2022–23</span></li>
+          <li><span>Joint Sec., PDF</span><span>2024</span></li>
+          <li><span>Executive Member, PDF</span><span>2022–23</span></li>
+          <li><span>Campus Ambassador, Shomvob</span><span>2024</span></li>
+        </ul>
+      </div>
+      <div class="field-card">
+        <h3>Honours & Awards</h3>
+        <ul>
+          <li><span>Government Merit Scholarship</span><span>—</span></li>
+          <li><span>Departmental Academic Scholarship</span><span>—</span></li>
+          <li><span>3rd Prize, Bangladesh Science Olympiad</span><span>2018</span></li>
+          <li><span>2nd Prize, Bangladesh English Olympiad</span><span>2018</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal" style="padding-bottom: 0;">
+    <div class="contact-section">
+      <div class="section-head">
+        <span class="section-tag">06 — Next Steps</span>
+        <h2 class="section-title">Let's connect</h2>
+      </div>
+      <p class="contact-lead">
+        I'm actively looking for program, research, or MEAL-focused roles with NGOs and INGOs
+        working in education and community development. Open to opportunities across Bangladesh
+        and internationally.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:smrownakrahman2001@gmail.com">smrownakrahman2001@gmail.com</a>
+        <a href="tel:+8801953644939">+880 1953-644939</a>
+        <a href="https://www.linkedin.com/in/s-m-rownakrahman" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    S.M. Rownak Rahman — Dhaka, Bangladesh — Updated June 2026
+  </footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
